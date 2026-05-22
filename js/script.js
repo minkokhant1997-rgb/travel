@@ -169,3 +169,21 @@ form.addEventListener("submit",function(e){
             document.getElementById("slider-title-3").innerText = forestData[index3].title;
             document.getElementById("slider-text-3").innerText = forestData[index3].text;
         }
+
+
+        let showbtn = document.getElementById("showbtn");
+        let hide = document.getElementById("article");
+        let judge = document.getElementById("judge");
+        let profit = document.getElementById("profit");
+        let shape = document.getElementById("shape");
+        let attitude = document.getElementById("attitude");
+        let method = document.getElementById("method");
+
+        showbtn.addEventListener('click', function(){
+            hide.style.display = 'block';
+            judge.style.display = 'block';
+            profit.style.display = 'block';
+            shape.style.display = 'block';
+            attitude.style.display = 'block';
+            method.style.display = 'block';
+        })
