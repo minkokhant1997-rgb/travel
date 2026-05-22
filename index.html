@@ -4,270 +4,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(./img/golf-club-the-village-agriculture-canyons.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 850px;
+            height: 500px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px 5px rgb(62, 60, 60);
+        }
+
+        .login_form {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(./img/Mrauk-U-Rakhine-State.avif);
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            position: relative;
+        }
+
+        .left h1 {
+            font-size: 35px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .left p {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .btn-both {
+            display: flex;
+            flex-direction: column;
+            background: #f0f2f5;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 2px 5px 5px black;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 8px;
+            margin-top: 12px;
+            position: absolute;
+            left: 83%;
+        }
+
+        .btn-login button {
+            padding: 10px 25px;
+            border-radius: 30px;
+            width: 106px;
+            background: #6e8efb;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-signup button {
+            padding: 10px 25px;
+            border-radius: 30px;
+            background: #6e8efb;
+            border: none;
+            color: white;
+            font-weight: bold;
+            width: 106px;
+        }
+
+        .btn-login button:active,
+        .btn-signup button:active {
+            background: white;
+            transition: 0.3 ease;
+            color: #6e8efb;
+            border: 1px solid #6e8efb;
+            transform: scale(1.01);
+        }
+
+        .right {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+            margin-left: 50px;
+        }
+
+        .profile {
+            margin-bottom: 2px;
+            margin-top: 30px;
+        }
+
+        .right h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+            color: #6e8efb;
+        }
+
+        .input_group {
+            background: #f0f2f5;
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input_group input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            padding: 0 10px;
+        }
+
+        .check {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .box {
+            display: flex;
+            color: #6e8efb;
+        }
+
+        .box input {
+            margin-right: 10px;
+        }
+
+        .box span:hover {
+            text-decoration: underline;
+            color: rgb(238, 92, 92);
+        }
+
+        .check a {
+            color: #6e8efb;
+            text-decoration: none;
+        }
+
+        .check a:hover {
+            text-decoration: underline;
+            color: rgb(238, 92, 92);
+        }
+
+        .right button {
+            background: #6e8efb;
+            border: none;
+            color: white;
+            padding: 10px 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            box-shadow: 4px 5px 8px black;
+            margin-top: 10px;
+        }
+
+        .right button:hover {
+            background: white;
+            color: #6e8efb;
+        }
+
+        .right button:active {
+            color: #6e8efb;
+            background-color: white;
+            border: 2px solid #6e8efb;
+            transition: 0.2s all ease;
+            transform: scale(1.01);
+        }
+
+        .create {
+            margin-top: 18px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #6e8efb;
+        }
+
+        .create:hover {
+            text-decoration: underline;
+            color: rgb(238, 92, 92);
+        }
+
+        .right p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 18px;
+        }
+
+        .social img {
+            width: 50px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 5px 5px black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social img:hover {
+            background: #f0f2f5;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive for phone */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                min-height: 100vh;
+                padding: 20px 10px;
+            }
+
+            .container {
+                width: 80%;
+                height: auto;
+                max-width: 400px;
+            }
+
+            .login_form {
+                flex-direction: column;
+            }
+
+            .left {
+                width: 100%;
+                height: 220px;
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 0px;
+                padding: 30px 15px;
+            }
+
+            .left h1 {
+                font-size: 28px;
+            }
+
+            .left p {
+                font-size: 14px;
+            }
+
+            .btn-both {
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                transform: translate(-50%, -50%);
+                flex-direction: row;
+                margin-top: 0px;
+            }
+
+            .right {
+                width: 100%;
+                margin-left: 0px;
+                padding: 40px 20px 20px 20px;
+            }
+
+            .profile {
+                margin-top: 15px;
+            }
+
+            .check {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .social {
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header class="nav">
-        <div class="logo">
-            <img src="#" alt="">
-            <span>Agency</span>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <a href="#home">Home</a>
-            <a href="#main">Top Destinations</a>
-            <a href="#contact">Contact us</a>
-        </div>
-        <button class="nav-toggle" id="navToggle">&#9776;</button>
-        <div class="btn">
-            <a href="./login.html" class="login-btn">Login</a>
-            <!-- <a href="" class="singup-btn">Sign up</a> -->
-        </div>
-    </header>
-    <section id="home">
+    <div class="container">
+        <div class="login_form" id="loginForm">
+            <div class="left" back>
+                <h1>Welcome!</h1>
+                <p>LOGIN & SIGN IN <br> to security access your account</p>
+                <div class="btn-both">
+                    <a href="#" class="btn-login"><button onclick="Login()">LOGIN</button></a>
+                    <a href="#" class="btn-signup"><button onclick="SignUp()">SIGN IN</button></a>
+                </div>
+            </div>
 
-        <div class="carousel-title">
-            <h1>Let's begin</h1>
-            <p>We assist you to choose the best</p>
-            <div class="form">
-                <div class="left form-left">
-                    <div>
-                        <label for="destinations">Choose Your Destinations</label>
-                        <input type="text" id="destinations" placeholder="Type Your Destinations">
-                    </div>
-                    <div class="date-row">
-                        <div>
-                            <label for="checkin">Check In Date</label>
-                            <input type="date" name="" id="checkin">
-                        </div>
-                        <div>
-                            <label for="checkout">Check Out Date</label>
-                            <input type="date" name="" id="checkout">
-                        </div>
-                    </div>
+            <div class="right">
+                <div class="profile">
+                    <img src="./img/user.png" alt="User Profile" width="50px">
                 </div>
-                <div class="right form-right">
-                    <div>
-                        <label for="rooms">How Many Rooms?</label>
-                        <select name="" id="rooms">
-                            <option value="1">1 rooms</option>
-                            <option value="2">2 rooms</option>
-                            <option value="3">3 rooms</option>
-                            <option value="4">4 rooms</option>
-                            <option value="5">5 rooms</option>
-                            <option value="6">6 rooms</option>
-                            <option value="7">7 rooms</option>
-                            <option value="8">8 rooms</option>
-                            <option value="9">9 rooms</option>
-                            <option value="10">10 rooms</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="adult">Adult</label>
-                        <select name="" id="adult">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="children">Children</label>
-                        <select name="" id="children">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="btn-group">
-                        <button>CHECK AVAILABILITY</button>
-                    </div>
+                <h2>Login</h2>
+                <div class="input_group">
+                    <input type="email" placeholder="User email" required id="email">
+                    <img src="./img/email.png" alt="" width="35px">
                 </div>
-            </div>
-        </div>
-        <div class="carousel">
-            <div class="carousel-image active">
-                <img src="./img/photo1.jpg" alt="">
-            </div>
-            <div class="carousel-image">
-                <img src="./img/photo2.jpg" alt="">
-            </div>
-            <div class="carousel-image">
-                <img src="./img/photo3.jpg" alt="">
-            </div>
-            <div class="carousel-image">
-                <img src="./img/phtoto4.jpg" alt="">
-            </div>
-            <div class="carousel-image">
-                <img src="./img/photo5.jpg" alt="">
-            </div>
-        </div>
-        <button class="carousel-btn prev-btn">&#10094;</button>
-        <button class="carousel-btn next-btn">&#10095;</button>
 
-    </section>
-    <section class="main" id="main">
-        <h1>
-            <marquee behavior="" direction="">မြန်မာနိုင်ငံရှိ လည်ပတ်စရာနေရာများ </marquee>
-        </h1>
-        <!-- For slider 1 -->
-        <div class="place">
-            <div class="photo">
-                <img id="slider-img-1" class="slider-img-style" src="./img/myanmar.jpg" alt="Mountain">
-                <button class="prev-btn" onclick="changeImage1(-1)">&lt;</button>
-                <button class="next-btn" onclick="changeImage1(1)">&gt;</button>
-            </div>
-            <div class="caption-first">
-                <h4 id="slider-title-1">ရွှေရောင်ဆည်းဆာနှင့် ပုဂံကဗျာ</h4>
-                <p id="slider-text-1">
-                    ရှေးဟောင်းစေတီပုထိုးများစွာ ကိန်းဝပ်စိုးစံရာ ပုဂံမြေပြင်ထက်သို့ ညို့မှိုင်းတဲ့
-                    နေဝင်ဆည်းဆာ အလင်းတန်းများ
-                    ဖြာကျနေသည့် မြင်ကွင်းဖြစ်ပါသည်။ စိမ်းစိုနေသော သစ်တောအုပ်များနှင့် မြူခိုးဝေဝေကြားတွင်
-                    ထည်ဝါစွာ
-                    မတ်တပ်ရပ်နေသည့် ဘုရားပုထိုးများက ရာစုနှစ်များစွာက အတိတ်သမိုင်းကြောင်းကို ဖော်ပြနေပါတယ်။
-                </p>
-                <button>ဖတ်ရန်</button>
-            </div>
-        </div>
+                <div class="input_group">
+                    <input type="password" placeholder="Password" required id="password">
+                    <img src="./img/padlock.png" alt="" width="35px">
+                </div>
 
-        <!-- For slider 2 -->
-        <div class="place-reverse">
-            <div class="photo-reverse">
-                <img id="slider-img-2" class="slider-img-style" src="./img/images (3).jpg" alt="Beach">
-                <button class="prev-btn" onclick="changeImage2(-1)">&lt;</button>
-                <button class="next-btn" onclick="changeImage2(1)">&gt;</button>
-            </div>
-            <div class="caption-reverse">
-                <h4 id="slider-title-2">ကျွန်းစိမ်းအလှနှင့် မြိတ်ကျွန်းစုရဲ့ ပုလဲရတနာ</h4>
-                <p id="slider-text-2">
-                    မိုးပြာရောင်ပင်လယ်ပြင်ကျယ်ကြီးရဲ့ အလယ်မှာ ထူးခြားဆန်းပြားစွာ တည်ရှိနေတဲ့ လခြမ်းကွေးပုံစံ
-                    ကျွန်းငယ်လေးတစ်ကျွန်း ဖြစ်ပါတယ်။ ကြည်လင်လွန်းလို့ ရေအောက်ခြေက သဲပွင့်လေးတွေအထိ
-                    မြင်တွေ့နိုင်တဲ့
-                    မြိတ်ကျွန်းစုရဲ့ သဘာဝအတိုင်း မပျက်စီးသေးတဲ့ အလှတရားက ခရီးသွား ဝါသနာရှင်တွေကို
-                    ဆွဲဆောင်နေပါတယ်။
-                </p>
-                <button>ဖတ်ရန်</button>
-            </div>
-        </div>
+                <div class="check">
+                    <div class="box">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </div>
+                    <a href="#">Forgot Password !</a>
+                </div>
 
-        <!-- For slider 3 -->
-        <div class="place">
-            <div class="photo">
-                <img id="slider-img-3" class="slider-img-style" src="./img/20190525-204918-largejpg.jpg" alt="Forest">
-                <button class="prev-btn" onclick="changeImage3(-1)">&lt;</button>
-                <button class="next-btn" onclick="changeImage3(1)">&gt;</button>
-            </div>
-            <div class="caption-second">
-                <h4 id="slider-title-3">ရွှေရောင်သန်းသော ပင်လယ်ပြင်</h4>
-                <p id="slider-text-3">
-                    ကောင်းကင်ပြာပြာမှာ တိမ်တိုက်ဖြူဖြူလေးတွေ လွင့်မျောနေပြီး၊ ပင်လယ်ရေပြင်ကျယ်ကြီးက နေဝင်ရီတရော
-                    အလင်းရောင်ကြောင့်
-                    ရွှေရောင်အတိ တောက်ပနေပါတယ်။ ပန်းချီကားတစ်ချပ်လို လှပလွန်းတဲ့ ကမ်းခြေဆည်းဆာ အမှတ်တရ
-                    ပုံရိပ်လေးတစ်ခုပါ။
-                </p>
-                <button>ဖတ်ရန်</button>
+                <button onclick="showLogin()" class="btn">Login</button>
+
+                <a href="#" class="create">Create Account</a>
+
+                <p>or login with</p>
+
+                <div class="social">
+                    <img src="./img/facebook.png" alt="#" width="50px">
+                    <img src="./img/google.png" alt="#" width="50px">
+                    <img src="./img/link.png" alt="#" width="50px">
+                    <img src="./img/telegram.png" alt="#" width="50px">
+                </div>
+
             </div>
         </div>
-    </section>
-    <!-- Content -->
-    <section id="contact">
-        <div class="container">
-            <h1 class="title">Contact Us</h1>
-            <div class="contact-form">
-                <form action="" method="post" id="form">
-                    <div>
-                        <input type="text" name="name" id="name" placeholder="Enter Your Name">
-                        <input type="email" name="email" id="email" placeholder="Enter Your Email">
-                        <input type="text" name="subject" id="subject" placeholder="Subject">
-                    </div>
-                    <div>
-                        <textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Send</button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact-info">
-                <div>
-                    <h2>visit our agency</h2>
-                    <ul>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right:10px; color:black;">
-                                <path
-                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                            </svg>
-                            <span>63, Main Street, BKK 123</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right:10px; color:black;">
-                                <path
-                                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
-                            </svg>
-                            <a href="tel: 09427683749">09427683749</a>
-                            <a href="tel: 09696422314">09696422314</a>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right:10px; color: black;">
-                                <path
-                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114V5.383zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.731z" />
-                            </svg>
-                            <a href="mailto: minkokhant1997@gmail.com">minkokhant1997@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Opening hours</h2>
-                    <ul>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right:10px; color:black;">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                            </svg>
-                            <span>7:00AM - 11:00PM</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right:10px; color:black; vertical-align: middle;">
-                                <path
-                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                            </svg>
-                            <span>Monday to Friday and Sunday</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34793.70661393607!2d96.09202626673529!3d16.81853340651309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1eb5e3fffe455%3A0xb7d3ad319654cf6e!2sShwedagon%20Pagoda!5e0!3m2!1sen!2smm!4v1779197543709!5m2!1sen!2smm"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="js/script.js"></script>
+    </div>
+
+    <!-- လက်ရှိ HTML ရဲ့ နောက်ဆုံးနားမှာ အခုလို Script ပိုင်း ထည့်ပေးပါ -->
+    <script>
+        function showLogin() {
+            // HTML input တွေထဲက တန်ဖိုးတွေကို ယူတာပါ
+            const emailInput = document.getElementById('email').value.trim();
+            const passwordInput = document.getElementById('password').value.trim();
+
+            // // စမ်းသပ်ဖို့အတွက် သတ်မှတ်ထားတဲ့ email နဲ့ password
+            // const correctEmail = "user@gmail.com";
+            // const correctPassword = "123456";
+
+            // တန်ဖိုးတွေ အလွတ်ဖြစ်နေလား အရင်စစ်မယ်
+            if (emailInput === "" || passwordInput === "") {
+                alert("ကျေးဇူးပြု၍ Email နှင့် Password ကို ဖြည့်စွက်ပေးပါ။");
+                return;
+            }
+
+            // အချက်အလက် ကိုက်ညီမှု ရှိ/မရှိ စစ်ဆေးခြင်း
+            if (emailInput === emailInput && passwordInput === passwordInput) {
+                alert("Login အောင်မြင်ပါသည်။ Main Page သို့ ရွှေ့ပြောင်းပေးနေပါသည်...");
+
+                // မှန်ကန်ရင် သွားစေချင်တဲ့ စာမျက်နှာ (main.html) ဆီ လမ်းကြောင်းပြောင်းတာပါ
+                window.location.href = "main.html";
+            } else {
+                // မှားယွင်းခဲ့ရင် ပြမယ့် Error Message
+                alert("Email သို့မဟုတ် Password မှားယွင်းနေပါသည်။ ပြန်လည်ကြိုးစားကြည့်ပါ။");
+            }
+        }
+    </script>
 </body>
+
 
 </html>
