@@ -50,6 +50,69 @@ prevBtn.addEventListener('click', prevSlide);
 
 setInterval(nextSlide, 5000);
 
+// validation
+const checkBtn = document.getElementById('checkAvailabilityBtn');
+
+        checkBtn.addEventListener('click', function() {
+            const destination = document.getElementById('destinations').value.trim();
+            const checkInDate = document.getElementById('checkIn').value;
+            const checkOutDate = document.getElementById('checkOut').value;
+            const rooms = parseInt(document.getElementById('rooms').value);
+            const adult = parseInt(document.getElementById('adult').value);
+            const children = parseInt(document.getElementById('children').value);
+
+            if (destination === "") {
+                alert("ကျေးဇူးပြု၍ သွားရောက်မည့်နေရာကို ရိုက်ထည့်ပေးပါ။");
+                return;
+            }
+
+            if (checkInDate === "" || checkOutDate === "") {
+                alert("ကျေးဇူးပြု၍ Check In နှင့် Check Out ရက်စွဲများကို ရွေးချယ်ပေးပါ။");
+                return;
+            }
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); 
+            
+            const dateIn = new Date(checkInDate);
+            const dateOut = new Date(checkOutDate);
+
+            if (dateIn < today) {
+                alert("Check In ရက်စွဲသည် ယနေ့ သို့မဟုတ် ယနေ့နောက်ပိုင်းရက် ဖြစ်ရပါမည်။");
+                return;
+            }
+
+            if (dateOut <= dateIn) {
+                alert("Check Out ရက်စွဲသည် Check In ရက်စွဲထက် အနည်းဆုံး ၁ ရက် နောက်ကျရပါမည်။");
+                return;
+            }
+
+            if (children > 0 && adult === 0) {
+                alert("ကလေးများ လိုက်ပါရန်အတွက် ကျေးဇူးပြု၍ အနည်းဆုံး လူကြီး ၁ ယောက် ထည့်သွင်းပေးပါ။");
+                return;
+            }
+
+            const totalGuests = adult + children;
+            const maxAllowedGuests = rooms * 4;
+
+            if (totalGuests > maxAllowedGuests) {
+                alert(`သင်ရွေးချယ်ထားသော အခန်းအရေအတွက် (${rooms} ခန်း) သည် စုစုပေါင်းလူဦးရေ (${totalGuests} ယောက်) အတွက် မလုံလောက်ပါ။ (၁ ခန်းလျှင် အများဆုံး ၄ ယောက်သာ ခွင့်ပြုပါသည်)`);
+                return;
+            }
+
+            console.log("Validated Booking Data:", {
+                destination,
+                checkInDate,
+                checkOutDate,
+                rooms,
+                adult,
+                children,
+                totalGuests
+            });
+
+            alert("အချက်အလက်များ အားလုံး ကိုက်ညီမှုရှိပါသည်။ ရရှိနိုင်မည့် အခန်းများကို ရှာဖွေပေးနေပါပြီ...");
+        });
+
 //contact
 
 const form = document.querySelector("#form");
