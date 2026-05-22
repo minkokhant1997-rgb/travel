@@ -1,0 +1,173 @@
+@media(max-width:992px){
+    .carousel-title h1{
+        font-size: 2.5rem;
+    }
+    .form{
+        padding: 30px;
+    }
+    #contact form div{
+        width: 80%;
+    }
+}
+@media(max-width:768px){
+    .nav{
+        height: 40px;
+    }
+    .logo span{
+        font-size: 1.2rem;
+        text-align: center;
+        justify-content: center;
+    }
+    .login-btn,.singup-btn{
+        padding: 10px;
+        text-align: center;
+    }
+    .btn{
+        gap: 30px;
+        padding-right: 10px;
+
+    }
+    .singup-btn{
+        width: 100px;
+    }
+    .carousel-title h1{
+        margin-top: 360px;
+    }
+    .carousel-title p{
+        margin-bottom: 20px;
+    }
+    .form{
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 270px;
+    }
+    .date-row{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .carousel-title h1{
+        font-size: 2.2rem;
+    }
+    #contact form div{
+        width: 100%;
+    }
+    #contact .contact-info>div{
+        width: 100%;
+    }
+    #contact .contact-info{
+        flex-direction: column;
+        gap: 30px;
+        padding: 1.5rem;
+    }
+    #contact .contact-info iframe{
+        width: 100% !important;
+        height: 300px;
+    }
+
+                .main h1 {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .place,
+            .place-reverse {
+                flex-direction: column;
+                height: auto;
+            }
+.place-reverse{
+        margin: 0;
+    }
+.photo,
+.photo-reverse {
+    width: 100%;
+    }
+
+.slider-img-style {
+    height: 300px;
+    }
+
+            .caption-first,
+            .caption-reverse,
+            .caption-second {
+                position: static;
+                width: 100%;
+                padding: 15px 20px;
+                margin: 0;
+            }
+
+            .caption-first h4,
+            .caption-reverse h4,
+            .caption-second h4 {
+                font-size: 20px;
+            }
+
+            .caption-first p,
+            .caption-reverse p,
+            .caption-second p {
+                font-size: 14px;
+            }
+
+            .caption-first button,
+            .caption-reverse button,
+            .caption-second button {
+                padding: 10px 30px;
+                font-size: 14px;
+            }
+
+    .nav-toggle{
+        display: block !important;
+        font-size: 24px;
+        width: 40px;
+        padding-left: 100px;
+        text-align: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+    }
+    .nav-menu{
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: gold;
+        gap: 0;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1) ;
+        z-index: 999;
+    }
+    .nav-menu a{
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+    .nav-menu.active{
+        max-height:200px;
+    }
+    #contact{
+        padding: 3rem 15px;
+    }
+    #contact form{
+        gap: 0;
+    }
+    #contact form div{
+        width: 100%;
+    }
+    #contact .contact-info h2{
+        font-size: 1.2rem;
+        margin-bottom: .8rem;
+    }
+    #contact .contact-info iframe{
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+    }
+
+        }
+

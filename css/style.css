@@ -1,0 +1,584 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+.nav{
+    display: flex;
+    background:gold;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.nav-toggle{
+    display: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    color: #333;
+}
+.logo{
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.nav-menu{
+    display: flex;
+    gap: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.btn{
+    display: flex;
+    gap: 50px;
+    padding-right: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.login-btn,.singup-btn{
+    border: 1px solid skyblue;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: aqua;
+    cursor: pointer;
+}
+#home{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.carousel{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.carousel-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.1);
+    transform-origin: center center;
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+.carousel-image.active{
+    opacity: 1;
+    transform: scale(1);
+}
+.carousel-image img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+.carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.carousel-btn:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+.prev-btn{
+    left: 20px;
+}
+.next-btn{
+    right: 20px;
+}
+.carousel-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    width: 85%;
+    max-width: 1100px;
+    text-align: center;
+    color: white;
+}
+.carousel-title h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.carousel-title p{
+    font-size: 1.2rem;
+    margin-bottom: 100px;
+    opacity: .9;
+}
+.form{
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: left;
+}
+.form .left{
+    flex: 1 ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.date-row{
+    display: flex;
+    gap: 20px;
+}
+.date-row > div{
+    flex: 1;
+}
+
+.form-right{
+    flex:  1 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+.form-right > div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.form-right .btn-group{
+    flex: 1.3;
+}
+
+.form label{
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form input, .form select{
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e5e5e5;
+    background-color: #fcfcfc;
+    color: #444;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.form-group input:focus, .form-group select:focus{
+    border-color: #4db7b3;
+    background-color: white;
+}
+.form button{
+    width: 100%;
+    padding: 13px;
+    background-color: #4db7b3;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:0.3s;
+    border-radius: 10px;
+}
+.btn-group button:hover{
+    background-color: skyblue;
+    box-shadow: 0 0 20px aqua;
+}
+
+/* contact*/
+#contact{
+    padding: 5rem 0;
+    background-image: url(../img/phtoto4.jpg);
+    background-size: cover;
+    background-position: center;
+    /* backdrop-filter: blur(50px); */
+}
+#contact form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#contact form div{
+    width: 40%;
+}
+#contact form input,
+#contact form textarea,
+#contact form button{
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    border: 1px solid black;
+    border-radius:5px;
+}
+#contact form button{
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5s;
+}
+#contact form button:hover{
+    background: skyblue;
+    color: white;
+}
+#contact form input::placeholder,
+#contact form textarea::placeholder{
+    font-size: 1rem;
+}
+#contact .contact-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3rem 0;
+}
+#contact .contact-info>div{
+    width: 30%;
+}
+#contact .contact-info iframe{
+    width: 100% !important;
+    height: 300px;
+}
+#contact .contact-info h2{
+    /* color: aqua; */
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+#contact .contact-info li{
+    margin: 1rem 0;
+}
+#contact .contact-info a{
+    color:black;
+}
+.contact-info ul li i{
+    display: inline-block !important;
+    width: 25px;
+    /* color: #4db7b3; */
+    font-size: 1.2rem;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.container .title{
+    text-align: center;
+    /* color: aqua; */
+}
+
+/* main */
+ .main h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* For slider 1 */
+        .place {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            border: 2px solid black;
+        }
+
+        .photo {
+            position: relative;
+            text-align: center;
+            width: 60%;
+        }
+
+        .photo button {
+            position: absolute;
+            top: 225px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .photo button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .prev-btn {
+            left: 15px;
+        }
+
+        .next-btn {
+            right: 15px;
+        }
+
+        .slider-img-style {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption-first {
+            flex: 1;
+            padding: 10px 30px;
+            background: #2e7d32;
+            position: absolute;
+            left: 60%;
+            height: 450px;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            border-left: 1px solid white;
+        }
+
+        .caption-first h4 {
+            color: white;
+            margin-bottom: 15px;
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .caption-first p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .caption-first button {
+            align-self: flex-start;
+            padding: 10px 40px;
+            border: none;
+            margin-top: 30px;
+            background-color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: #2e7d32;
+        }
+
+        .caption-first button:hover {
+            transform: scale(1.05);
+        }
+
+        /* For slider 2 */
+        .place-reverse {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-direction: row-reverse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-reverse {
+            position: relative;
+            text-align: center;
+            width: 60%;
+        }
+
+        .photo-reverse button {
+            position: absolute;
+            top: 225px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .photo-reverse button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .caption-reverse {
+            flex: 1;
+            padding: 10px 30px;
+            background: rgb(108, 175, 217);
+            position: absolute;
+            right: 60%;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid white;
+        }
+
+        .caption-reverse h4 {
+            color: white;
+            margin-bottom: 15px;
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .caption-reverse p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .caption-reverse button {
+            align-self: flex-start;
+            padding: 10px 40px;
+            border: none;
+            margin-top: 30px;
+            background-color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: rgb(108, 175, 217);
+        }
+
+        .caption-reverse button:hover {
+            transform: scale(1.05);
+        }
+
+        /* For slider 3 */
+        .caption-second {
+            flex: 1;
+            padding: 10px 30px;
+            background: #d45aad;
+            position: absolute;
+            left: 60%;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid white;
+        }
+
+        .caption-second h4 {
+            color: white;
+            margin-bottom: 15px;
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .caption-second p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .caption-second button {
+            align-self: flex-start;
+            padding: 10px 40px;
+            border: none;
+            margin-top: 30px;
+            background-color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: #d45aad;
+        }
+
+        .caption-second button:hover {
+            transform: scale(1.05);
+        }
+/* 
+        @media only screen and (max-width: 768px) {
+            .main h1 {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .place,
+            .place-reverse {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .photo,
+            .photo-reverse {
+                width: 100%;
+            }
+
+            .slider-img-style {
+                height: 300px;
+            }
+
+            .caption-first,
+            .caption-reverse,
+            .caption-second {
+                position: static;
+                width: 100%;
+                padding: 15px 20px;
+                margin: 0;
+            }
+
+            .caption-first,
+            .caption-second {
+                border-left: none;
+                border-top: 1px solid white;
+            }
+
+            .caption-reverse {
+                border-right: none;
+                border-top: 1px solid white;
+            }
+
+            .caption-first h4,
+            .caption-reverse h4,
+            .caption-second h4 {
+                font-size: 20px;
+            }
+
+            .caption-first p,
+            .caption-reverse p,
+            .caption-second p {
+                font-size: 14px;
+            }
+
+            .caption-first button,
+            .caption-reverse button,
+            .caption-second button {
+                padding: 10px 30px;
+                font-size: 14px;
+            }
+        } */
